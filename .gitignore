@@ -1,0 +1,36 @@
+node_modules/
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.pfx
+*.p12
+*.secret
+*credentials*
+
+# Browser profiles may contain authenticated state and must never enter Git.
+engine-bakeoff/profiles/**
+!engine-bakeoff/profiles/**/
+!engine-bakeoff/profiles/**/.gitkeep
+
+# Local captures can contain IP/device metadata. Promote only reviewed, redacted reports.
+engine-bakeoff/environment/*.json
+!engine-bakeoff/environment/.gitkeep
+
+# Raw evidence may contain provider or session data.
+engine-bakeoff/results/**/*.log
+engine-bakeoff/results/**/*.json
+engine-bakeoff/results/**/*.png
+engine-bakeoff/results/**/*.jpg
+
+# BrowserRuntime runtime profiles contain persistent browser state.
+runtime/profiles/
+
+# Wails production binaries are reproducible build artifacts.
+build/bin/
+
+# Portable instance data and release staging must never enter source control.
+/data/
+/build/portable-staging/
+*.zip
